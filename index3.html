@@ -32,7 +32,7 @@
     header {
       background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
       color: #fff;
-      padding: 2rem 1rem 2.5rem;
+      padding: 2rem 1rem 3rem;
       text-align: center;
       position: relative;
       box-shadow: 0 4px 15px rgba(0,0,0,0.12);
@@ -55,8 +55,8 @@
     .admin-trigger:hover { background: rgba(255,255,255,0.28); }
 
     .school-logo {
-      width: 78px;
-      height: 78px;
+      width: 82px;
+      height: 82px;
       border-radius: 50%;
       background: #fff;
       padding: 4px;
@@ -70,7 +70,7 @@
 
     .container {
       max-width: 1120px;
-      margin: -1.5rem auto 3rem;
+      margin: -1.8rem auto 3rem;
       padding: 0 1rem;
     }
 
@@ -86,4 +86,342 @@
     .form-header {
       display: flex;
       justify-content: space-between;
-      align-items: centerسسس
+      align-items: center;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-header h2 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: var(--primary);
+    }
+
+    .badge {
+      background: #eff6ff;
+      color: var(--primary-light);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .grid-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      background: #f8fafc;
+      transition: 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary-light);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    }
+
+    .btn-submit {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .btn-submit:hover {
+      background: var(--primary-light);
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .toolbar h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: var(--text);
+    }
+
+    .filters {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .filters input, .filters select {
+      width: auto;
+      min-width: 180px;
+      background: #fff;
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .activity-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 1.35rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s;
+    }
+
+    .activity-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .dept-tag {
+      background: #ccfbf1;
+      color: #0f766e;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 6px;
+    }
+
+    .date-tag {
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .activity-card h4 {
+      margin: 0.3rem 0 0.5rem;
+      font-size: 1.15rem;
+      color: var(--primary);
+    }
+
+    .activity-card p {
+      margin: 0 0 1rem;
+      color: #334155;
+      font-size: 0.93rem;
+    }
+
+    .card-footer {
+      border-top: 1px solid var(--border);
+      padding-top: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .delete-btn {
+      background: #fee2e2;
+      color: var(--danger);
+      border: none;
+      padding: 0.3rem 0.65rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 700;
+      display: none;
+    }
+
+    body.admin-mode .delete-btn {
+      display: inline-block;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1rem;
+      background: #fff;
+      border-radius: 14px;
+      border: 1px dashed var(--border);
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="admin-trigger" onclick="toggleAdmin()" id="adminBtn">🔒 دخول الإدارة</button>
+    <img src="logo.png" alt="شعار ثانوية الجزائر بنات" class="school-logo" onerror="this.style.display='none'">
+    <h1>بوابة الأنشطة المدرسية</h1>
+    <p>ثانوية الجزائر بنات — توثيق الفعاليات والبرامج المدرسية</p>
+  </header>
+
+  <main class="container">
+    <section class="form-card">
+      <div class="form-header">
+        <h2>➕ تسجيل نشاط مدرسي جديد</h2>
+        <span class="badge">نموذج التوثيق</span>
+      </div>
+
+      <form id="activityForm" class="grid-form">
+        <div class="form-group">
+          <label for="title">عنوان النشاط / الفعالية</label>
+          <input type="text" id="title" placeholder="مثال: ورشة البرمجة والذكاء الاصطناعي" required>
+        </div>
+
+        <div class="form-group">
+          <label for="department">القسم العلمي / الجهة المنفذة</label>
+          <select id="department" required>
+            <option value="">اختر القسم...</option>
+            <option value="قسم الحاسوب">قسم الحاسوب</option>
+            <option value="قسم اللغة العربية">قسم اللغة العربية</option>
+            <option value="قسم اللغة الإنجليزية">قسم اللغة الإنجليزية</option>
+            <option value="قسم الرياضيات">قسم الرياضيات</option>
+            <option value="قسم العلوم">قسم العلوم</option>
+            <option value="قسم الاجتماعيات">قسم الاجتماعيات</option>
+            <option value="قسم التربية الإسلامية">قسم التربية الإسلامية</option>
+            <option value="الإدارة المدرسية / الأنشطة">الإدارة المدرسية / الأنشطة</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date">تاريخ التنفيذ</label>
+          <input type="date" id="date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="supervisor">المعلمة المنفذة / المشرفة</label>
+          <input type="text" id="supervisor" placeholder="اسم المعلمة أو رئيسة القسم" required>
+        </div>
+
+        <div class="form-group full">
+          <label for="description">وصف النشاط وأبرز الأهداف</label>
+          <textarea id="description" rows="3" placeholder="اكتبي نبذة مختصرة عن النشاط والفئة المستهدفة..." required></textarea>
+        </div>
+
+        <div class="form-group full">
+          <button type="submit" class="btn-submit">حفظ ونشر النشاط</button>
+        </div>
+      </form>
+    </section>
+
+    <section>
+      <div class="toolbar">
+        <h3>📋 سجل الأنشطة المنفذة (<span id="count">0</span>)</h3>
+        <div class="filters">
+          <input type="text" id="searchInput" placeholder="🔍 بحث بعنوان النشاط..." oninput="renderActivities()">
+          <select id="filterDept" onchange="renderActivities()">
+            <option value="all">جميع الأقسام</option>
+            <option value="قسم الحاسوب">قسم الحاسوب</option>
+            <option value="قسم اللغة العربية">قسم اللغة العربية</option>
+            <option value="قسم اللغة الإنجليزية">قسم اللغة الإنجليزية</option>
+            <option value="قسم الرياضيات">قسم الرياضيات</option>
+            <option value="قسم العلوم">قسم العلوم</option>
+            <option value="قسم الاجتماعيات">قسم الاجتماعيات</option>
+            <option value="قسم التربية الإسلامية">قسم التربية الإسلامية</option>
+            <option value="الإدارة المدرسية / الأنشطة">الإدارة المدرسية / الأنشطة</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="activitiesList" class="activities-grid"></div>
+    </section>
+  </main>
+
+  <script>
+    let activities = JSON.parse(localStorage.getItem('aljazaer_activities')) || [
+      {
+        id: 1,
+        title: "مبادرة التميز الرقمي",
+        department: "قسم الحاسوب",
+        date: "2026-11-12",
+        supervisor: "أسرة قسم الحاسوب",
+        description: "تفعيل البوابة الإلكترونية لتوثيق جميع الأنشطة والفعاليات المدرسية في ثانوية الجزائر بنات."
+      }
+    ];
+
+    let isAdmin = false;
+
+    function toggleAdmin() {
+      if (!isAdmin) {
+        const pass = prompt("أدخلي كلمة مرور الإدارة (الافتراضية: 1234):");
+        if (pass === "1234") {
+          isAdmin = true;
+          document.body.classList.add('admin-mode');
+          document.getElementById('adminBtn').textContent = "🔓 خروج الإدارة";
+        } else if (pass !== null) {
+          alert("كلمة المرور غير صحيحة");
+        }
+      } else {
+        isAdmin = false;
+        document.body.classList.remove('admin-mode');
+        document.getElementById('adminBtn').textContent = "🔒 دخول الإدارة";
+      }
+    }
+
+    document.getElementById('activityForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const newActivity = {
+        id: Date.now(),
+        title: document.getElementById('title').value.trim(),
+        department: document.getElementById('department').value,
+        date: document.getElementById('date').value,
+        supervisor: document.getElementById('supervisor').value.trim(),
+        description: document.getElementById('description').value.trim()
+      };
+      activities.unshift(newActivity);
+      localStorage.setItem('aljazaer_activities', JSON.stringify(activities));
+      this.reset();
+      renderActivities();
+    });
+
+    function deleteActivity(id) {
+      if (confirm("هل أنتِ متأكدة من حذف هذا النشاط؟")) {
+        activities = activities.filter(item => item.id !== id);
+        localStorage.setItem('aljazaer_activities', JSON.stringify(activities));
+        renderActivities();
+      }
+    }
+
+    function renderActivities() {
+      const list = document.getElementById('activitiesList');
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const dept = document.getElementById('filterDept').value;
+
+      const filtered = activities.filter(item => {
+        const matchesSearch = item.title.toLowerCase
